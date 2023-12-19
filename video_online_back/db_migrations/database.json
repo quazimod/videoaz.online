@@ -1,0 +1,5 @@
+{
+  "dev": "postgres://postgres:123456@localhost:5432/datingplayboy_pg",
+  "test": "postgres://postgres@localhost:5432/datingplayboy_pg",
+  "prod": "postgres://videoman:zbfQDc7XVRjTB8e@dp3.cjqwsfsjzafv.eu-central-1.rds.amazonaws.com:5432/datingplayboy_pg"
+}

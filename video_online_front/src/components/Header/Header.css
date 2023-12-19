@@ -1,0 +1,19 @@
+.ReactCollapse--collapse {
+  transition: height 500ms;
+  position: absolute;
+  z-index: 1100;
+  top: 4px;
+  width: 100%
+}
+
+@media (max-width: 991.98px) {
+  .ReactCollapse--collapse {
+    top: 80px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ReactCollapse--collapse {
+    top: 0;
+  }
+}

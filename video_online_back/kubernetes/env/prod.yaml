@@ -1,0 +1,58 @@
+replicaCount: 1
+
+image:
+  repository: video-online-back
+  # tag: latest
+  pullPolicy: Always
+
+containerPort:
+  http: 3000
+
+podLabels:
+  security.banzaicloud.io/webhook-enabled: "true"
+
+service:
+  ports:
+    http: 80
+
+  targetPorts:
+    http: http
+
+readinessProbe:
+  path: /healthcheck
+  enabled: true
+  initialDelaySeconds: 30
+
+ingress:
+  default:
+    enabled: true
+    ingressClassName: internal-nginx
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: "75"
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "180"
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "180"
+    hosts:
+      - "api.videoaz.online"
+      - "api.videouz.online"
+      - "api.new24video.com"
+
+# resources:
+#   requests:
+#     cpu: 100m
+#     memory: 300Mi
+#   limits:
+#     cpu: 1
+#     memory: 1Gi
+
+appVersionEnv: true
+
+envVarsMap:
+  VAULT_PATH: kubernetes-prod
+  VAULT_ROLE: larambra-prod
+  VAULT_ADDR: https://vault.togeton.net
+  NODE_ENV: "PRODUCTION"
+  AWS_ACCESS_KEY_ID: "vault:prod/data/accounts/aws#AWS_ACCESS_KEY_ID"
+  AWS_SECRET_ACCESS_KEY: "vault:prod/data/accounts/aws#AWS_SECRET_ACCESS_KEY"
+  DB_CONNECTION_STRING: "vault:prod/data/accounts/db_video_online#CONNECTION_STRING"
+
+

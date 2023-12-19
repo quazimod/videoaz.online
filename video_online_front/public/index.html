@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Главная</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <meta name="theme-color" content="#000">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="/css/bluetheme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.7.2/css/lightgallery.min.css"> -->
+
+    <script type="text/javascript" src="/js/kt_player.js"></script>
+
+    <style type="text/css">
+        mark.im-caret {
+            -webkit-animation: 1s blink step-end infinite !important;
+            animation: 1s blink step-end infinite !important;
+        }
+
+        mark.im-caret-select {
+            background-color: rgba(0, 0, 0, .25);
+        }
+
+        @-webkit-keyframes blink {
+
+            from,
+            to {
+                border-right-color: black;
+            }
+
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                border-right-color: black;
+            }
+
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        span.im-static {
+            color: grey;
+        }
+
+        div.im-colormask {
+            display: inline-block;
+            border-style: inset;
+            border-width: 2px;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        div.im-colormask>input {
+            position: absolute !important;
+            display: inline-block;
+            background-color: transparent;
+            color: transparent;
+            caret-color: transparent;
+            -webkit-appearance: caret;
+            -moz-appearance: caret;
+            appearance: caret;
+            border-style: none;
+            left: 0;
+            /*calculated*/
+        }
+
+        div.im-colormask>input:focus {
+            outline: none;
+        }
+
+        div.im-colormask>input::-moz-selection {
+            background: none;
+        }
+
+        div.im-colormask>input::selection {
+            background: none;
+        }
+
+        div.im-colormask>input::-moz-selection {
+            background: none;
+        }
+
+        div.im-colormask>div {
+            color: black;
+            display: inline-block;
+            width: 100px;
+            /*calculated*/
+        }
+    </style>
+    <style>
+      @media (max-width: 700px) {
+          iframe {
+              width: 100% !important;
+              height: auto !important;
+          }
+      }
+
+      video.loading {
+          border: 1px solid red;
+          background: black url(/services/private.perchinka-vip.net/img/loadingv.gif) center center no-repeat;
+      }
+
+      #videoplayer {
+          width: 100% !important;
+          max-width: 100%;
+          margin: 7px auto 0;
+          height: auto;
+      }
+
+      #videoplayer.video-stoped pjsdiv>pjsdiv:nth-child(13),
+      #videoplayer.video-stoped pjsdiv>pjsdiv:nth-child(12),
+      #videoplayer.video-stoped pjsdiv>pjsdiv:nth-child(14) {
+          opacity: 0;
+          visibility: hidden;
+      }
+
+      .ic {
+          position: relative;
+      }
+
+      @media (max-width: 1199.98px) {
+          #videoplayer {
+              margin-top: 60px;
+          }
+      }
+
+      @media (max-width:991.98px) {
+          #videoplayer {
+              margin-top: 125px;
+          }
+      }
+
+      @media (max-width: 767.98px) {
+          #videoplayer {
+              margin-top: 175px;
+          }
+      }
+
+      @media (max-width: 575.98px) {
+          #videoplayer {
+              margin-top: 185px;
+          }
+      }
+
+      @media (max-width: 480px) {
+          #videoplayer {
+              margin-top: 3px;
+          }
+      }
+    </style>
+</head>
+
+<body>
+  
+    <div id="root"></div>
+
+    <!-- используем код вставки плеера -->
+    <script type="text/javascript">
+      // указываем список всех переменных инициализации (для примера указаны только 2)
+      var flashvars = {
+          video_url: "#", // Данные с таблицы services_content, столбец: inforow4
+          video_url_text: 'FHD',
+          video_alt_url: "#", // Данные с таблицы services_content, столбец: inforow5
+          video_alt_url_text: 'HD',
+          video_alt_url2: "#", // Данные с таблицы services_content, столбец: inforow6
+          video_alt_url2_text: 'SD',
+          preview_url: "#", //Главное превью - таблица services_content, столбец: preview_url
+          skin: '1',
+          hide_controlbar: '1'
+      };
+
+      // указываем параметры HTML объекта плеера
+      var params = {
+          allowfullscreen: 'true',
+          allowscriptaccess: 'always'};
+
+      // вызываем функцию вставки плеера
+      // 'kt_player' - идентификатор контейнера для плеера
+      // '/kt_player/kt_player.swf' - путь к файлу плеера
+      // '600' - ширина плеера
+      // '400' - высота плеера
+      // flashvars - список всех переменных инициализации, созданный выше
+      // params - список всех параметров HTML объекта плеера, созданный выше
+      var player_obj = kt_player('kt_player', '/kt_player/kt_player.swf', '760', '427', flashvars, params);
+
+      // используйте player_obj для обработки событий (см. секцию по JavaScript API)
+    </script>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- <script src="/js/lightgallery.min.js"></script> -->
+    <!-- <script src="/js/lg-fullscreen.min.js"></script>
+    <script src="/js/lg-thumbnail.min.js"></script>
+    <script src="/js/lg-autoplay.min.js"></script>
+    <script src="/js/lg-autoplay.min.js"></script> -->
+    <!--footer end-->
+
+    <div style="position:fixed; top:0; left:0; overflow:hidden;"><input style="position:absolute; left:-300px;"
+            type="text" value="" id="focus_retriever" readonly="true"></div>
+</body>
+  
+</html>

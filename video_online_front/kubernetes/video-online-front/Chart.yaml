@@ -1,0 +1,7 @@
+apiVersion: v1
+name: video-online-front
+description: video-online-front
+type: application
+version: 1.2.2
+appVersion: "{{ .Env.APP_VERSION }}"
+

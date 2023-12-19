@@ -1,0 +1,48 @@
+replicaCount: 1
+
+image:
+  repository: video-online-front
+  # tag: latest
+  pullPolicy: Always
+
+containerPort:
+  http: 3001
+
+service:
+  ports:
+    http: 80
+
+  targetPorts:
+    http: http
+
+readinessProbe:
+  path: /healthcheck
+  enabled: true
+  initialDelaySeconds: 30
+
+ingress:
+  default:
+    enabled: true
+    ingressClassName: internal-nginx
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: "75"
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "180"
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "180"
+    hosts:
+      - "videoaz.online"
+      - "videouz.online"
+      - "new24video.com"
+
+# resources:
+#   requests:
+#     cpu: 100m
+#     memory: 300Mi
+#   limits:
+#     cpu: 1
+#     memory: 1Gi
+
+appVersionEnv: true
+
+envVarsMap:
+  NODE_ENV: "PRODUCTION"
+

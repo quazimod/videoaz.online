@@ -1,0 +1,131 @@
+.fullsize-preview-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #121212;
+  height: 100%;
+  width: 100%;
+  z-index: 999999999999;
+}
+
+.fullsize-preview-box img {
+  position: relative;
+  top: 12%;
+  display: block;
+  width: 98%;
+  margin: auto;
+}
+
+.preview-image-thumb {
+  cursor: pointer;
+  width: 100%;
+  margin: 1rem 0;
+  border: 1px solid blue;
+}
+
+.admin-home-page {
+  padding: 9% 28% 33%;
+}
+
+.admin-video-manager fieldset {
+  padding: 3.4rem 1.4rem;
+}
+
+.admin-home-page button {
+  display: block;
+  padding: 6px 0;
+  width: 85%;
+  margin: 7px auto;
+}
+
+.admin-video-manager .top-btn-menu {
+  width: 60%;
+  margin: 0.6rem auto;
+}
+
+.admin-video-manager .top-btn-menu.fixed {
+  position: fixed;
+  top: 0;
+  left: 20%;
+  margin: 0;
+}
+
+.admin-video-manager {
+  padding: 2rem 1rem;
+  overflow-x: auto;
+}
+
+.admin-video-manager table td {
+  min-width: 120px;
+  border-top: 1px solid white;
+  text-align: center;
+}
+
+.admin-video-manager table th {
+  text-align: center;
+}
+
+.admin-video-manager table td:nth-child(3) {
+  min-width: 350px;
+}
+
+.admin-video-manager table td:nth-child(7) {
+  min-width: 260px;
+}
+
+.admin-video-manager table {
+  margin: 0.4rem 0;
+  overflow-x: auto;
+}
+
+.admin-video-manager table input, .admin-video-manager table textarea {
+  background: inherit;
+  color: inherit;
+  border: 0!important;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.admin-video-manager table textarea {
+  vertical-align: middle;
+}
+
+.admin-video-manager input[type="text"]:focus, .admin-video-manager textarea:focus {
+  background: white;
+  color: black;
+  text-align: left;
+  border: #666 1px solid;
+}
+
+input.preview-selector {
+  padding: 0.5rem 0;
+}
+
+ul.page-nav-top {
+  padding: 0;
+  margin: 1.5rem 0 1rem;
+  height: 26px;
+}
+
+ul.page-nav-top li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.admin-video-manager a {
+  text-decoration: underline;
+}
+
+input.filter {
+  width: 25%;
+  margin: 3rem 0 0;
+}
+
+span.results-count {
+  margin: 0 0 0 1rem
+}
+
+.admin-video-manager .loading {
+  position: absolute;
+}
